@@ -252,6 +252,7 @@ function updateColorBox() {
         var myPicker = new jscolor.color(document.getElementById(boxname), {});
         var color = d3.rgb(d3.select("#elipse" + setname).style("fill")).toString();
         myPicker.fromString(color);
+        document.getElementById(boxname).style.opacity = globalOpacity;
     }
 }
 
@@ -310,6 +311,7 @@ function opacityUp() {
         var setname = originalAllSetsNames[i];
         d3.select("#elipse" + setname).style("fill-opacity", globalOpacity);
     }
+    updateColorBox();
 }
 
 
